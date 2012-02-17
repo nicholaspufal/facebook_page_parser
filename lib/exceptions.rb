@@ -19,19 +19,19 @@ module Exceptions
   def handle_failure(response)       
       case response.code
         when "401" 
-          message = "Falha na autenticação. Http status 401" 
+          message = "Authentication failure. HTTP status 401" 
           raise AuthenticationFailedError, message 
         when "403" 
-          message = "Acesso não autorizado. Http status 403" 
+          message = "Unauthorized access. HTTP status 403" 
           raise UnauthorizedAccessError, message 
         when "404" 
-          message = "Recurso não encontrado. Http status 404" 
+          message = "Resource not found. HTTP status 404" 
           raise ResourceNotAvailableError, message 
         when "500" 
-          message = "O web service reportou um erro interno. Http status 500" 
+          message = "Web service reported an internal error. HTTP status 500" 
           raise UnknownServerError, message 
         else 
-          message = "Web Service indisponível - erro não identificado. Http status #{response.code}" 
+          message = "Web Service unavailable - unidentified error. HTTP status #{response.code}" 
           raise WebServiceNotAvailableError, message  
       end 
   end
