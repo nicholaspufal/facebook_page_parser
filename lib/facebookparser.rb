@@ -1,11 +1,11 @@
 #encoding: utf-8
 
 require 'httparty'
-require 'facebookparser/exceptions'
+require 'exceptions'
 
 class FacebookParser
   include HTTParty
-  extend ErrorHandler
+  extend Exceptions
   
   attr_reader :page
   

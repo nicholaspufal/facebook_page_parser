@@ -1,6 +1,21 @@
 #encoding: utf-8
 
-module FacebookParser 
+module Exceptions
+  class AuthenticationFailedError < StandardError
+  end
+
+  class ResourceNotAvailableError < StandardError 
+  end
+
+  class UnauthorizedAccessError < StandardError
+  end
+
+  class UnknownServerError < StandardError
+  end
+
+  class WebServiceNotAvailableError < StandardError
+  end
+  
   def handle_failure(response)       
       case response.code
         when "401" 
@@ -19,5 +34,5 @@ module FacebookParser
           message = "Web Service indisponível - erro não identificado. Http status #{response.code}" 
           raise WebServiceNotAvailableError, message  
       end 
-    end
+  end
 end

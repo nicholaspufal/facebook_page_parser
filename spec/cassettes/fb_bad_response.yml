@@ -1,0 +1,38 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://graph.facebook.com:443/89888524723abc
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 404
+      message: Not Found
+    headers:
+      access-control-allow-origin:
+      - ! '*'
+      cache-control:
+      - no-store
+      content-type:
+      - text/javascript; charset=UTF-8
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      www-authenticate:
+      - ! 'OAuth "Facebook Platform" "not_found" "(#803) Some of the aliases you requested
+        do not exist: 89888524723abc"'
+      x-fb-rev:
+      - '511047'
+      x-fb-debug:
+      - WvmAx/eWN6OFOcg79yKU3Yxru9qY7XoghceFlKyneXA=
+      x-cnection:
+      - close
+      date:
+      - Fri, 17 Feb 2012 16:53:12 GMT
+      content-length:
+      - '128'
+    body: ! '{"error":{"message":"(#803) Some of the aliases you requested do not
+      exist: 89888524723abc","type":"OAuthException","code":803}}'
+    http_version: '1.1'
