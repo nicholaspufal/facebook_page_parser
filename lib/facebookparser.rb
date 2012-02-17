@@ -19,9 +19,12 @@ class FacebookParser
     "https://graph.facebook.com/#{id}"
   end
   
+  #memoize request
+  def request
+    @request ||= self.class.get(@page)
+  end
+  
   def get
-    request = self.class.get(@page)
-    
     if request.success?
       request
     else
