@@ -1,0 +1,22 @@
+Description
+==========
+
+This gem was made in 2 hours for an experiemntal project, so yes, it's pretty simple yet, but I hope is still useful. 
+
+
+Usage
+==========
+
+Simple example:
+
+		fb = FacebookParser.new("http://www.facebook.com/pages/CAIXA-DE-IDEIAS/89888524723")
+		fb.get["description"] #or any attribute you want
+		
+To require a picture in a given type, you may use:
+
+		fb = FacebookParser.new("http://www.facebook.com/pages/CAIXA-DE-IDEIAS/89888524723")
+		thumbnail = fb.page + "/picture&type=small"
+
+
+
+
