@@ -15,7 +15,7 @@ module FacebookPageParser
     end
   
     def parse_url(url)
-      url = url.gsub(/http:\/\/www.facebook.com\//,"")
+      url = url.gsub(/(http:\/\/)?([a-z\-]+|www)?\.?facebook.com\//,"")
       id = (url.match(/(pages)+/)) ? url.split("/").last : url  
       "https://graph.facebook.com/#{id}"
     end
@@ -24,7 +24,7 @@ module FacebookPageParser
     def request
       @request ||= self.class.get(@page)
     end
-  
+    
     def get
       if request.success?
         request
