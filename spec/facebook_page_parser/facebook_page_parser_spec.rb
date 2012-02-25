@@ -39,13 +39,6 @@ describe "Parser" do
       end
     end
     
-    it "should return nil when a parameter is not present in the response hash" do
-      VCR.use_cassette('fb_good_response') do
-        fb = FacebookPageParser::Parser.new("http://www.facebook.com/pages/CAIXA-DE-IDEIAS/89888524723")
-        fb.get["abc"].should == nil
-      end
-    end
-    
     it "should return the website containing the http:// correctly" do
       VCR.use_cassette('fb_page_containing_http_in_website') do
         fb = FacebookPageParser::Parser.new("http://www.facebook.com/viagemmania")

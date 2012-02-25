@@ -1,4 +1,4 @@
-require File.expand_path("../../lib/facebook_page_parser/parser",__FILE__)
+require File.expand_path("../../lib/facebook_page_parser",__FILE__)
 require 'httparty'
 require 'vcr'
 

@@ -3,6 +3,16 @@ Description
 
 This is a very simple parser for Facebook Pages (a.k.a fan pages), using the Graph API. This gem was made in 2 hours for an experimental project, so many small fixes need to be made. You're welcome to make a pull request :)
 
+Installing
+==========
+
+Include the gem on your Gemfile:
+
+		gem 'facebook_page_parser'
+		
+Install it
+
+		bundle install
 
 Usage
 ==========

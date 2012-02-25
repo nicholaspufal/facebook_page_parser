@@ -32,8 +32,8 @@ GEM
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     vcr (1.11.3)
-    webmock (1.8.0)
-      addressable (>= 2.2.7)
+    webmock (1.7.10)
+      addressable (~> 2.2, > 2.2.5)
       crack (>= 0.1.7)
 
 PLATFORMS
@@ -44,4 +44,4 @@ DEPENDENCIES
   rspec
   ruby-debug19
   vcr
-  webmock (~> 1.8.0)
+  webmock (~> 1.7.0)
