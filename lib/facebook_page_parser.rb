@@ -1,6 +1,7 @@
 #encoding: utf-8
 
 require 'httparty'
+require 'uri'
 require 'facebook_page_parser/exceptions'
 
 module FacebookPageParser
@@ -12,12 +13,6 @@ module FacebookPageParser
   
     def initialize(page)
       @page = parse_url(page)
-    end
-  
-    def parse_url(url)
-      url = url.gsub(/(http:\/\/)?([a-z\-]+|www)?\.?facebook.com\//,"")
-      id = (url.match(/(pages)+/)) ? url.split("/").last : url  
-      "https://graph.facebook.com/#{id}"
     end
   
     #memoize request
@@ -32,5 +27,14 @@ module FacebookPageParser
         self.class.handle_failure(request.response) 
       end
     end
+    
+    private
+    
+    def parse_url(url)
+      url = URI(url).path
+      id = url.split("/").last
+      "https://graph.facebook.com/#{id}"
+    end
+    
   end
 end

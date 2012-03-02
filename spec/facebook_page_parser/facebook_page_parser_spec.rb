@@ -9,6 +9,12 @@ describe "Parser" do
 
       fb = FacebookPageParser::Parser.new("http://facebook.com/pages/CAIXA-DE-IDEIAS/89888524723")
       fb.page.should == "https://graph.facebook.com/89888524723"
+      
+      fb = FacebookPageParser::Parser.new("http://facebook.com/pages/CAIXA-DE-IDEIAS/89888524723?abc=abc")
+      fb.page.should == "https://graph.facebook.com/89888524723"
+      
+      fb = FacebookPageParser::Parser.new("http://facebook.com/pages/CAIXA-DE-IDEIAS/89888524723#123abc")
+      fb.page.should == "https://graph.facebook.com/89888524723"
 
       fb = FacebookPageParser::Parser.new("https://www.facebook.com/pages/CAIXA-DE-IDEIAS/89888524723")
       fb.page.should == "https://graph.facebook.com/89888524723"

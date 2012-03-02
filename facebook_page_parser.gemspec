@@ -3,7 +3,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name        = "facebook_page_parser"
-  s.version     = "0.1.1"
+  s.version     = "0.1.2"
   s.date        = '2012-02-24'
   s.authors     = ["Nicholas Pufal"]
   s.email       = ["niko.pufal@gmail.com"]
